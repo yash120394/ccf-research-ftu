@@ -36,3 +36,32 @@ Bottommost point = Centre(y) + height/2
 
 All the glomeruli ovals were drawn by iterating through all the keys present in a single .roi zip file.
  
+
+
+# Visualize Glomeruli properties
+
+## Dataset used
+VAN0008-RK-403-100-PAS_registered.ome
+
+## Steps used to detect Glom size and area
+- Read annotation files from ImageJ and Qupath
+- Create a binary mask for individual annotations
+- Extract properties of individual blobs in binary mask using Skimage library
+- Plot histogram and boxplot to visualize different properties of Glomeruli
+
+
+
+# Generating different ground truth using all annotations
+
+## Dataset used
+VAN0008-RK-403-100-PAS_registered.ome
+
+## Steps used to count glomeruli based on different overlaps
+- Using the annotations of different person, create a individual binary masks
+- Add all the mask to get a array with 0,1,2,3 and 4 pixel values
+- Create a binary mask with different overlap regions
+- Get counts of individual overlaps using scipy.measurement library 
+
+
+
+
